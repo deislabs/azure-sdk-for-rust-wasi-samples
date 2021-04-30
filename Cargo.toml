@@ -1,0 +1,19 @@
+[package]
+name = "wasi-azure-tests"
+version = "0.1.0"
+authors = ["Radu M <root@radu.sh>"]
+edition = "2018"
+
+[dependencies]
+azure_core = { git = "https://github.com/radu-matei/azure-sdk-for-rust", branch = "enable-wasi-experimental-http", features = ["enable_wasi_experimental_http"] }
+azure_storage = { git = "https://github.com/radu-matei/azure-sdk-for-rust", branch = "enable-wasi-experimental-http" }
+
+# azure_core = { path = "../../Azure/azure-sdk-for-rust/sdk/core", version = "0.1.0", features = ["enable_wasi_experimental_http"], default-features = false }
+# azure_storage = { path = "../../Azure/azure-sdk-for-rust/sdk/storage", version = "0.1.0" }
+futures = "0.3"
+bytes = "1"
+md5 = "0.7"
+
+[patch.crates-io]
+ring = { git = "https://github.com/radu-matei/ring", branch = "wasm32-wasi", version = "0.16.20" }
+oauth2 = { git = "https://github.com/radu-matei/oauth2-rs", branch = "wasm32-wasi", deafault-features = false}
