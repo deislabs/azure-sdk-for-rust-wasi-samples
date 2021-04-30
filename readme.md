@@ -4,7 +4,7 @@ This repo contains samples for using the [Azure Rust SDK][rust-sdk] from WASI
 modules, using the [`wasi-experimental-http`][wasi-experimental-http] crate. The
 samples are slightly modified versions of those from the [upstream SDK
 repository][rust-sdk]. Note that not all SDKs are compilable to `wasm32-wasi`,
-and this repo should be updated as more of the are added.
+and this repo should be updated as more compatible SDKs are added.
 
 Currently, only the Blob Storage SDK has been tested, and the _very_ early work
 in progress can be tracked [here][fork].
