@@ -6,21 +6,23 @@ samples are slightly modified versions of those from the [upstream SDK
 repository][rust-sdk]. Note that not all SDKs are compilable to `wasm32-wasi`,
 and this repo should be updated as more compatible SDKs are added.
 
-Currently, only the Blob Storage SDK has been tested, and the _very_ early work
-in progress can be tracked [here][fork].
+The _very_ early work in progress can be tracked [here][fork].
 
 ### Building
 
 ```
 $ cargo target add wasm32-wasi
-$ cargo build --target wasm32-wasi
+$ cargo build --target wasm32-wasi --release --bin blob
+$ cargo build --target wasm32-wasi --release --bin cosmos
 ```
 
 At this point, the easiest way to test the resulting module is to execute it
 using the helper binary that can be found [here][bin]:
 
 ```
-$ wasmtime-http target/wasm32-wasi/debug/wasi-azure-tests.wasm --env STORAGE_MASTER_KEY=<master-key> --env STORAGE_ACCOUNT=<storage-account> -a https://<storage-account>.blob.core.windows.net
+$ wasmtime-http target/wasm32-wasi/release/blob.wasm --env STORAGE_MASTER_KEY=<master-key> --env STORAGE_ACCOUNT=<storage-account> -a https://<storage-account>.blob.core.windows.net
+
+$ wasmtime-http target/wasm32-wasi/release/cosmos.wasm --env COSMOS_MASTER_KEY=<master-key> --env COSMOS_ACCOUNT=<cosmos-account> -a https://<cosmos-account>.documents.azure.com
 ```
 
 [rust-sdk]: https://github.com/Azure/azure-sdk-for-rust
