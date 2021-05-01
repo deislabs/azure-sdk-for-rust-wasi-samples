@@ -5,13 +5,17 @@ authors = ["Radu M <root@radu.sh>"]
 edition = "2018"
 
 [dependencies]
-# azure_core = { git = "https://github.com/radu-matei/azure-sdk-for-rust", branch = "enable-wasi-experimental-http", features = ["enable_wasi_experimental_http"] }
-# azure_storage = { git = "https://github.com/radu-matei/azure-sdk-for-rust", branch = "enable-wasi-experimental-http" }
-# azure_cosmos = { git = "https://github.com/radu-matei/azure-sdk-for-rust", branch = "enable-wasi-experimental-http" }
+azure_core = { git = "https://github.com/radu-matei/azure-sdk-for-rust", branch = "enable-wasi-experimental-http", features = ["enable_wasi_experimental_http"] }
+azure_cosmos = { git = "https://github.com/radu-matei/azure-sdk-for-rust", branch = "enable-wasi-experimental-http" }
+azure_storage = { git = "https://github.com/radu-matei/azure-sdk-for-rust", branch = "enable-wasi-experimental-http" }
+iothub = { git = "https://github.com/radu-matei/azure-sdk-for-rust", branch = "enable-wasi-experimental-http" }
+azure_event_grid = { git = "https://github.com/radu-matei/azure-sdk-for-rust", branch = "enable-wasi-experimental-http" }
 
-azure_core = { path = "../../Azure/azure-sdk-for-rust/sdk/core", version = "0.1.0", features = ["enable_wasi_experimental_http"], default-features = false }
-azure_cosmos = { path = "../../Azure/azure-sdk-for-rust/sdk/cosmos", version = "0.1.0" }
-azure_storage = { path = "../../Azure/azure-sdk-for-rust/sdk/storage", version = "0.1.0" }
+# azure_core = { path = "../../Azure/azure-sdk-for-rust/sdk/core", version = "0.1.0", features = ["enable_wasi_experimental_http"], default-features = false }
+# azure_cosmos = { path = "../../Azure/azure-sdk-for-rust/sdk/cosmos", version = "0.1.0" }
+# azure_storage = { path = "../../Azure/azure-sdk-for-rust/sdk/storage", version = "0.1.0" }
+# iothub = { path = "../../Azure/azure-sdk-for-rust/sdk/iothub", version = "0.1.0" }
+# azure_event_grid = { path = "../../Azure/azure-sdk-for-rust/sdk/event_grid", version = "0.1.0" }
 
 bytes = "1"
 chrono = "0.4"
@@ -30,3 +34,9 @@ name = "blob"
 
 [[bin]]
 name = "cosmos"
+
+[[bin]]
+name = "iothub"
+
+[[bin]]
+name = "eventgrid"
